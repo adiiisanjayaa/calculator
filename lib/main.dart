@@ -1,7 +1,6 @@
 import 'package:calculator/segitiga.dart';
 import 'package:calculator/shape.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -85,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisCount: 2,
         ),
         itemBuilder: (BuildContext context, int index) {
-          var icon;
+          Widget? icon;
           //Definisi icon dari setiap item
           switch (shapes[index]) {
             case "Segitiga":
@@ -95,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   strokeWidth: 10,
                   paintingStyle: PaintingStyle.fill,
                 ),
-                child: Container(
+                child: const SizedBox(
                   height: 180,
                   width: 200,
                 ),
@@ -137,8 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
           return GestureDetector(
             onTap: onItemTap(shapes[index]),
             child: Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.blue,
@@ -146,8 +145,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: [
                   // icon
-                  icon,
-                  SizedBox(height: 10),
+                  icon!,
+                  const SizedBox(height: 10),
                   // title
                   Text(shapes[index]),
                 ],

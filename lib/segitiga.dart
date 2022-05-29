@@ -10,8 +10,8 @@ class SegitigaPage extends StatefulWidget {
 
 class SegitigaPageState extends State<SegitigaPage> {
   // controller untuk menangkap nilai yang diinputkan
-  TextEditingController alas = new TextEditingController();
-  TextEditingController tinggi = new TextEditingController();
+  TextEditingController alas = TextEditingController();
+  TextEditingController tinggi = TextEditingController();
   // variable hasil untuk menampilkan hasil pergitungan
   String hasil = "...";
 
@@ -19,7 +19,7 @@ class SegitigaPageState extends State<SegitigaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Hitung Volume Segitiga"),
+          title: const Text("Hitung Volume Segitiga"),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -27,19 +27,19 @@ class SegitigaPageState extends State<SegitigaPage> {
               //text field alas
               TextFormField(
                 controller: alas,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Alas",
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               //text field tinggi
               TextFormField(
                 controller: tinggi,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Tinggi",
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               //button untuk menghitung
               InkWell(
                 onTap: () {
@@ -53,22 +53,22 @@ class SegitigaPageState extends State<SegitigaPage> {
                   }
                 },
                 child: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(color: Colors.blue),
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(color: Colors.blue),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "Hitung",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               //tampilkan hasil
               Text(
                 "Volume Segitiga = $hasil",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
               )
             ],
           ),
