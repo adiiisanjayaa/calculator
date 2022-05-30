@@ -1,4 +1,7 @@
 import 'package:calculator/segitiga.dart';
+import 'package:calculator/persegi.dart';
+import 'package:calculator/persegipanjang.dart';
+import 'package:calculator/lingkaran.dart';
 import 'package:calculator/shape.dart';
 import 'package:flutter/material.dart';
 
@@ -48,21 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
       return () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const SegitigaPage()),
+          MaterialPageRoute(builder: (context) => const PersegiPage()),
         );
       };
     } else if (shape == "Persegi Panjang") {
       return () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const SegitigaPage()),
+          MaterialPageRoute(builder: (context) => const PersegipanjangPage()),
         );
       };
     } else {
       return () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const SegitigaPage()),
+          MaterialPageRoute(builder: (context) => const LingkaranPage()),
         );
       };
     }
